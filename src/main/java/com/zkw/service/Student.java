@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class Student {
     private Book book;
 
-
+    @Autowired
     public Student(Book book){
         this.book=book;
     }

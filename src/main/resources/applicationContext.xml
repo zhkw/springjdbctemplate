@@ -28,4 +28,8 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
+    <bean id="carServiceImpl" class="com.zkw.service.CarServiceImpl">
+
+    </bean>
+
 </beans>
