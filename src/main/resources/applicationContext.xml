@@ -24,19 +24,39 @@
         <property name="useCodeAsDefaultMessage" value="true"/>
     </bean>
 
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <bean class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close" id="dataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/springjdbc" />
+        <property name="url" value="jdbc:mysql://localhost:3306/spring_bank_app_db" />
         <property name="username" value="root" />
         <property name="password" value="" />
     </bean>
-
-    <bean id="carJDBCTemplate" class="com.zkw.dao.CarDaoImpl">
+    <bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="carServiceImpl" class="com.zkw.service.CarServiceImpl">
 
-    </bean>
+<!--    <bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">-->
+<!--        <property name="jdbcDriver" value="com.mysql.jdbc.Driver" />-->
+<!--        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/act" />-->
+<!--        <property name="jdbcUsername" value="root" />-->
+<!--        <property name="jdbcPassword" value="" />-->
+<!--        <property name="databaseSchemaUpdate" value="true"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+<!--        <property name="driverClassName" value="com.mysql.jdbc.Driver" />-->
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/springjdbc" />-->
+<!--        <property name="username" value="root" />-->
+<!--        <property name="password" value="" />-->
+<!--    </bean>-->
+
+<!--    <bean id="carJDBCTemplate" class="com.zkw.dao.CarDaoImpl">-->
+<!--        <property name="dataSource" ref="dataSource"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="carServiceImpl" class="com.zkw.service.CarServiceImpl">-->
+
+<!--    </bean>-->
 
 </beans>
